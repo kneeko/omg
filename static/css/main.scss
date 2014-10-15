@@ -6,10 +6,12 @@
 171E23
 a good footer color
 */
+html, body {
+    height: 100%;
+}
 
 body {
     background-color: #171E23;
-    /*background: #F1DA6F;*/
     max-width: 100%;
     font: 16px/24px 'source sans pro', sans-serif;
 }
@@ -22,12 +24,16 @@ h1 {
 
 img {
     max-width: 100%;
-    /*image-rendering: -webkit-optimize-contrast;
-    image-rendering: -moz-crisp-edges */
 }
 
 #wrapper {
     width: 100%;
+    min-height: 100%;
+    margin: 0 auto -56px;
+}
+
+#footer, #push {
+    height: 55px;
 }
 
 #hero {
@@ -106,6 +112,7 @@ div > .inner {
     font-size: 48px;
     text-shadow: rgba(82, 142, 151, 1) 0 4px;
 }
+
 #hero h3 {
     font-size: 28px;
     text-shadow: rgba(82, 142, 151, 1) 0 3px;
@@ -183,10 +190,11 @@ div > .inner {
 #badges li {
     display: inline-block;
     width: 170px;
-    //height: 70px;
+    height: 57px;
     background: #2e2e2e;
     margin: 10px;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 #badges li a {
@@ -197,11 +205,9 @@ div > .inner {
 #footer {
     color: #527c98;
     border-top: 1px solid rgba(207, 223, 233, 0.05);
-    //height: 100px;
     width: 100%;
-    padding: 15px 0;
     background: #212b32;
-    overflow: hidden;
+    line-height: 52px
 }
 
 #footer ul {
@@ -214,22 +220,27 @@ div > .inner {
     margin-left: 10px;
 }
 
-#footer ul li a {
+#footer a {
     color: #527c98;
     text-decoration: none;
 }
 
-#footer ul li a:hover {
+#footer a:hover {
     color: #fff;
 }
 
+#footer h3 span {
+    margin-left: 10px;
+    opacity: 0.6;
+}
+
 #content {
-    padding: 15px 0;
+    padding: 15px 0 15px 0;
     color: #5d7b8f;
     overflow: hidden;
 }
 
-#content > div, #footer > div {
+#content > div {
     padding: 0 15px;
 }
 
@@ -338,6 +349,8 @@ div > .inner {
 
     -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
     user-drag: none;
+
+    transform: scaleZ(1.0);
 }
 
 #fruits span {
@@ -408,26 +421,52 @@ div > .inner {
     top: 0%;
 }
 
+#score {
+    position: absolute;
+    z-index: 10;
+    top: 15px;
+    right: 15px;
+    font-family: 'BPReplay';
+    color: #fff;
+    text-shadow: rgba(40, 40, 40, 0.5) 0 2px;
+    font-size: 28px;
+    line-height: 28px;
+    vertical-align: middle;
+    letter-spacing: 1px;
+}
+
 #giraffe {
-    height: 80%;
+    height: 200px;
     //border-radius: 20px;
     //border: 1px solid rgba(82, 142, 151, 0.2);
     //box-shadow: rgba(82, 142, 151, 1) 0 2px;
     position: absolute;
     bottom: 0;
     z-index: 1;
-    -webkit-transition: all 0.15s ease-in-out;
-    -moz-transition: all 0.15s ease-in-out;
-    -o-transition: all 0.15s ease-in-out;
-    transition: all 0.15s ease-in-out;
+    margin-bottom: 0%;
+    -webkit-transition: all 0.55s ease-in-out;
+    -moz-transition: all 0.55s ease-in-out;
+    -o-transition: all 0.55s ease-in-out;
+    transition: all 0.55s ease-in-out,
+        margin-bottom 0.85s ease-out;
+
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-drag: none;
+    pointer-events:none;
+}
+
+#giraffe.hidden {
+    margin-bottom: -100%;
+    transition: margin-bottom 0.6s ease-out;
 }
 
 #giraffe:hover {
-    //bottom: -100px;
+    cursor: pointer;
 }
 
 #giraffe:active {
-    bottom: -150px;
+    margin-bottom: -125px;
+    transition: margin-bottom 0.2s ease-out;
 }
 
 #grass {
@@ -454,6 +493,10 @@ div > .inner {
     #giraffe {
         height: 50%;
     }
+
+    #footer h3 {
+        padding-left: 15px;
+    }
 }
 
 @media (max-width: 420px) {
@@ -471,6 +514,7 @@ div > .inner {
 
     #content {
         width: 100%;
+        padding: 15px 0 15px 0;
     }
 
     #downloads li {
@@ -482,6 +526,19 @@ div > .inner {
         max-width: 100%;
         padding-right: 30px;
         //padding: 0 15px;
+    }
+
+    #footer {
+        //height: 147px - 30px;
+        height: auto;
+    }
+
+    #wrapper {
+        margin: 0 auto;
+    }
+
+    #push {
+        height: auto;
     }
 
     #footer ul, #footer h3 {

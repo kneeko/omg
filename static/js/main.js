@@ -16,6 +16,14 @@
 
 			// get the class list of the element that was clicked
 			score++;
+
+			var scoreboard = document.getElementById('score');
+			var previous = scoreboard.innerHTML;
+			if (isNaN(parseInt(scoreboard.innerHTML))) {
+				scoreboard.innerHTML = score;
+			} else {
+				scoreboard.innerHTML = parseInt(scoreboard.innerHTML) + score;
+			}
 			var classes = this.classList;
 			var parent = document.getElementById('fruits');
 
@@ -211,7 +219,8 @@
 			};
 		}
 
-		window.setTimeout(function() { load(amount) }, 500 );
+		window.setTimeout(function() { load(amount) }, 300);
+		window.setTimeout(function() { document.getElementById('giraffe').classList.remove('hidden') }, 400);
 
 
 	$('#gallery').magnificPopup({

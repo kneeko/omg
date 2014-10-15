@@ -8,13 +8,14 @@
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Montserrat' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 </head>
 
-<body id="wrapper">
+<body>
+<div id='wrapper'>
 	<div id='hero'>
 		<div class='inner'>
-			<img id='giraffe' src='static/images/giraffe.png'>
+			<img id='giraffe' class='hidden' src='static/images/giraffe.png'>
 			<div>
 				<h1>oh my giraffe</h1>
 				<h3>&mdash; a fruity conquest &mdash;</h3>
@@ -28,14 +29,15 @@
 		<div id='fruits' style='display: visible'>
 			<audio src='static/audio/pop.mp3' id='pop'></audio>
 		</div>
+		<div id='score'></div>
 	</div>
 
 	<!-- some kind of pretty seperator -->
 
 	<div id='content'>
-		<div class='inner'>
-			<!--
+		<div class='inner' style='display: visible'>
 			<h2>endless fun, a tall order?</h2>
+			<!--
 
 			<ul id='reviews'>
 				<li>"I've never held a smartphone before but this is a lot of fun!"</li>
@@ -48,7 +50,8 @@
 				<li>
 					<div>
 						<a href='static/images/fullsize-1.gif'>
-							<img src='static/images/gameplay-1.gif'/>
+							<!--<img src='static/images/gameplay-1.gif'/>-->
+							<img src='static/css/bg.jpg'>
 						</a>
 						<h5>really long necks<i class="fa fa-check-square"></i></h5>
 					</div>
@@ -57,7 +60,8 @@
 				<li>
 					<div>
 						<a href='static/images/fullsize-1.gif'>
-							<img src='static/images/gameplay-5.gif'/>
+							<!--<img src='static/images/gameplay-1.gif'/>-->
+							<img src='static/css/bg.jpg'>
 						</a>
 						<h5>off-the-hook wipeouts<i class="fa fa-check-square"></i></h5>
 					</div>
@@ -65,7 +69,8 @@
 				<li>
 					<div>
 						<a href='static/images/fullsize-1.gif'>
-							<img src='static/images/gameplay-3.gif'/>
+							<!--<img src='static/images/gameplay-1.gif'/>-->
+							<img src='static/css/bg.jpg'>
 						</a>
 						<h5>big cat carnage<i class="fa fa-check-square"></i></h5>
 					</div>
@@ -73,7 +78,8 @@
 				<li>
 					<div>
 						<a href='static/images/fullsize-1.gif'>
-							<img src='static/images/gameplay-4.gif'/>
+							<!--<img src='static/images/gameplay-1.gif'/>-->
+							<img src='static/css/bg.jpg'>
 						</a>
 						<h5>gripping combo system<i class="fa fa-check-square"></i></h5>
 					</div>
@@ -81,7 +87,8 @@
 				<li>
 					<div>
 						<a href='static/images/fullsize-1.gif'>
-							<img src='static/images/gameplay-2.gif'/>
+							<!--<img src='static/images/gameplay-1.gif'/>-->
+							<img src='static/css/bg.jpg'>
 						</a>
 						<h5>tranquil evening snacks<i class="fa fa-check-square"></i></h5>
 					</div>
@@ -89,7 +96,8 @@
 				<li>
 					<div>
 						<a href='static/images/fullsize-1.gif'>
-							<img src='static/images/gameplay-6.gif'/>
+							<!--<img src='static/images/gameplay-1.gif'/>-->
+							<img src='static/css/bg.jpg'>
 						</a>
 						<h5>day-night cycle<i class="fa fa-check-square"></i></h5>
 					</div>
@@ -107,20 +115,21 @@
 			</ul>
 			<br>
 		</div>
+	<div id="push"></div>
 	</div>
-
-	<div id='footer'>
-		<div class='inner'>
-			<ul>
-				<li><a href='#'>support</a></li>
-				<li><a href='#'>change log</a></li>
-				<li><a href='#'>press kit</a></li>
-			</ul>
-			<h3>&copy; kneeko, 2014</h3>
-		</div>
+</div>
+<div id='footer'>
+	<div class='inner'>
+		<ul>
+			<li><a href='#'>support</a></li>
+			<li><a href='#'>change log</a></li>
+			<li><a href='#'>press kit</a></li>
+		</ul>
+		<h3>&copy; kneeko, 2014 <span>made with <a href='//love2d.org'>LÖVE</a></span></h3>
 	</div>
-	<script src='static/js/zepto.min.js'></script>
-	<script src='static/js/magnific.min.js'></script>
-	<script src='static/js/main.js'></script>
+</div>
+<script src='static/js/zepto.min.js'></script>
+<script src='static/js/magnific.min.js'></script>
+<script src='static/js/main.js'></script>
 </body>
 </html>
