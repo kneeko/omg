@@ -1,2 +1,2 @@
-omg
+promo site for oh my giraffe
 ===
