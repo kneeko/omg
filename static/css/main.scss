@@ -1,24 +1,46 @@
-@import 'reset';
-@import 'magnific';
+@import "reset";
+@import "bourbon/bourbon";
+@import "magnific";
+
+
+$background-color: #171E23;
+$shadow-color: rgba(82, 142, 151, 1);
+
+$layout-width: 800px;
+$layout-gutter: 15px;
+
+$header-color: #5d7b8f;
+$header-font-stack: 'BPReplay';
+//$header-font: ;
+
+$h1-size: 48px;
+$h2-size: 28px;
+$h3-size: 28px;
+$h5-size: 20px;
+
+$copy-color: #5d7b8f;
+$copy-font-stack: 'source sans pro';
+$copy-font: 18px/24px $copy-font-stack;
 
 /* 
 171E23
 a good footer color
 */
+
 html, body {
     height: 100%;
 }
 
 body {
-    background-color: #171E23;
+    background-color: $background-color;
     max-width: 100%;
-    font: 18px/24px 'source sans pro', sans-serif;
+    font: $copy-font;
 }
 
 h1 {
     font-size: 28px;
     font-family: 'Montserrat';
-    color: #5d7b8f;
+    color: $header-color;
 }
 
 img {
@@ -45,24 +67,17 @@ img {
     border-bottom: 1px solid rgba(207, 223, 233, 0.2);
 }
 
+// hero element background
+// using a pseudo-element so that the height and width can be scaled proportionally
 #hero:after {
     content: '';
     display: block;
-
     background: rgba(255, 255, 255, 0.1);
     background-image: url('bg.jpg');
     background-size: 650px;
     background-position: center bottom;
     background-repeat: repeat-x;
     background-color: #71B6C1;
-
-    /*
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-    -ms-interpolation-mode: nearest-neighbor;
-    */
-
     position: absolute;
     top: 0;
     height: 100%;
@@ -70,14 +85,12 @@ img {
     max-width: 100%;
     max-height: 100%;
     margin: 0 auto;
-
-
     z-index: -1;
 }
 
 div > .inner {
     position: relative;
-    width: 800px;
+    width: $layout-width;
     max-width: 100%;
     margin: 0 auto;
     padding: 0;
@@ -108,20 +121,20 @@ div > .inner {
 }
 
 #hero h1 {
-    font-size: 48px;
-    text-shadow: rgba(82, 142, 151, 1) 0 4px;
+    font-size: $h1-size;
+    text-shadow: $shadow-color 0 4px;
 }
 
 #hero h3 {
-    font-size: 28px;
-    text-shadow: rgba(82, 142, 151, 1) 0 3px;
+    font-size: $h3-size;
+    text-shadow: $shadow-color 0 3px;
 }
 
 
 #gallery {
     font-size: 0;
     list-style: none;
-    margin: auto -15px;
+    margin: auto (-$layout-gutter);
     max-width: 100%;
 }
 
@@ -137,7 +150,7 @@ div > .inner {
 
 
 #gallery li h5 {
-    font-size: 20px;
+    font-size: $h5-size;
     letter-spacing: 1px;
     color: #5d7b8f;
     font-variant: small-caps;
@@ -159,7 +172,7 @@ div > .inner {
     position: relative;
     display: block;
     margin: 0;
-    padding: 15px;
+    padding: $layout-gutter;
 }
 
 #gallery li div a {
@@ -211,7 +224,7 @@ div > .inner {
 
 #footer ul {
     float: right;
-    margin-right: 30px;
+    margin-right: $layout-gutter*2;
 }
 
 #footer ul li {
@@ -220,7 +233,7 @@ div > .inner {
 }
 
 #footer a {
-    color: #527c98;
+    color: $copy-color;
     text-decoration: none;
 }
 
@@ -235,7 +248,7 @@ div > .inner {
 
 #content {
     padding: 15px 0 15px 0;
-    color: #5d7b8f;
+    color: $copy-color;
     overflow: hidden;
 }
 
@@ -251,9 +264,9 @@ div > .inner {
 }
 
 #content h2 {
-    font-family: 'BPReplay';
+    font-family: $header-font-stack;
     text-shadow: rgba(40, 40, 40, 0.5) 0 2px;
-    font-size: 28px;
+    font-size: $h2-size;
     line-height: 56px;
 }
 
@@ -264,23 +277,23 @@ div > .inner {
 }
 
 @-webkit-keyframes pulsate {
-    0%   { color: #5d7b8f; }
+    0%   { color: $copy-color; }
     50%  { color: #73BA92; }
-    100% { color: #5d7b8f; }
+    100% { color: $copy-color; }
 }
 #content h2 span {
-    -webkit-animation: pulsate 1.5s infinite;
+    @include animation( pulsate 1.5s infinite );
 }
 
 #downloads {
     font-size: 0;
-    padding: 15px 0;
+    padding: $layout-gutter 0;
 }
 
 
 #downloads li {
     display: inline-block;
-    margin: 0 15px 0 0;
+    margin: 0 $layout-gutter 0 0;
     font-size: 18px;
     vertical-align: middle;
     border-radius: 4px;
@@ -331,50 +344,31 @@ div > .inner {
     width: 100%;
     height: 100%;
     top: -60px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
+    @include user-select(none);
 }
 
 #fruits img[class*=' fruit-'] {
     position: absolute;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-
-    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
-    user-drag: none;
-
-    transform: scaleZ(1.0);
+    @include transform(scaleZ(1.0));
+    @include user-select(none);
 }
 
 #fruits span {
     position: absolute;
     z-index: 4;
     font-size: 24px;
-    font-family: 'BPReplay';
+    font-family: $header-font-stack;
     color: #fff;
     margin-top: 24px;
     transform: scale(0, 0);
     text-shadow: rgba(82, 142, 151, 1) 0 2px;
 
-    -webkit-transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    -o-transition: all 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
+    @include transition( all 0.35s ease-in-out );
 }
 
 #fruits img.fruit:hover {
     cursor: pointer;
-    transform: scale(1.05, 1.05);
-}
-
-#fruits img.fruit.popped:hover {
-    transform: scale(0, 0);
+    //@include filter(brightness(1.1));
 }
 
 #fruits img.fruit:active {
@@ -382,37 +376,34 @@ div > .inner {
 }
 
 #fruits img.popped {
-    transform: scale(0, 0);
+    @include transform(scale(0, 0));
 }
 
 #fruits img.fruit {
     top: -10%;
-    -webkit-transition: all 0.175s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-    -moz-transition: all 0.175s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-    -o-transition: all 0.175s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-    //transition: all 0.175s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 
-    transition:
-        all 0.175s cubic-bezier(0.6, -0.28, 0.735, 0.045),
-        transform 0.175s ease-in-out,
-        top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    @include transition(
+            all 0.175s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+            transform 0.175s ease-in-out,
+            top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+        );
+
 }
 
 #fruits img.vine {
     //background: red;
     top: -10%;
+    pointer-events:none;
     position: absolute;
-    transform-origin: 50% 100%;
-    transform: translate(0px, -90%) scale(0.12, 10) ;
 
-    -webkit-transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    -o-transition: all 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
 
-    transition:
-        all 0.35s ease-in-out,
-        top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    @include transform(translate(0px, -90%) scale(0.12, 10));
+    @include transform-origin(50% 100%);
+
+    @include transition(
+            all 0.35s ease-in-out,
+            top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+        );
 }
 
 
@@ -423,40 +414,38 @@ div > .inner {
 #score {
     position: absolute;
     z-index: 10;
-    top: 15px;
-    right: 15px;
-    font-family: 'BPReplay';
+    top: $layout-gutter;
+    right: $layout-gutter;
     color: #fff;
+    font-family: $header-font-stack;
     text-shadow: rgba(40, 40, 40, 0.5) 0 2px;
-    font-size: 28px;
+    font-size: $h2-size;
     line-height: 28px;
     vertical-align: middle;
     letter-spacing: 1px;
 }
 
 #giraffe {
-    height: 200px;
-    //border-radius: 20px;
-    //border: 1px solid rgba(82, 142, 151, 0.2);
-    //box-shadow: rgba(82, 142, 151, 1) 0 2px;
+    height: 240px;
     position: absolute;
     bottom: 0;
     z-index: 1;
     margin-bottom: 0%;
-    -webkit-transition: all 0.55s ease-in-out;
-    -moz-transition: all 0.55s ease-in-out;
-    -o-transition: all 0.55s ease-in-out;
-    transition: all 0.55s ease-in-out,
-        margin-bottom 0.85s ease-out;
 
-    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    @include transition(
+            all 0.55s ease-in-out,
+            margin-bottom 0.85s ease-out
+        );
+
+
+    -webkit-user-drag: none;
     user-drag: none;
-    //pointer-events:none;
+
 }
 
 #giraffe.hidden {
     margin-bottom: -100%;
-    transition: margin-bottom 0.6s ease-out;
+    @include transition(margin-bottom 0.6s ease-out);
 }
 
 #giraffe:hover {
@@ -466,7 +455,7 @@ div > .inner {
 #giraffe:active {
     pointer-events:none;
     margin-bottom: -125px;
-    transition: margin-bottom 0.2s ease-out;
+    @include transition(margin-bottom 0.2s ease-out);
 }
 
 #grass {
@@ -495,7 +484,7 @@ div > .inner {
     }
 
     #footer h3 {
-        padding-left: 15px;
+        padding-left: $layout-gutter;
     }
 }
 
@@ -514,7 +503,7 @@ div > .inner {
 
     #content {
         width: 100%;
-        padding: 15px 0 15px 0;
+        padding: $layout-gutter 0 $layout-gutter 0;
     }
 
     #downloads li {
@@ -524,7 +513,7 @@ div > .inner {
 
     #downloads {
         max-width: 100%;
-        padding-right: 30px;
+        padding-right: $layout-gutter * 2;
         //padding: 0 15px;
     }
 
@@ -556,6 +545,6 @@ div > .inner {
     }
 
     #content > div {
-        padding: 0 15px;
+        padding: 0 $layout-gutter;
     }
 }
