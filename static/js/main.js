@@ -64,11 +64,6 @@
 			point.style.left = this.style.left;
 			point.style.top = this.style.top;
 
-			if ((score >= 10) && (!(harvested))) {
-				harvested = true;
-				load(24);
-			}
-
 			window.setTimeout(function(){
 				point.style.transform = 'scale(1, 1)';
 			}, 20);
