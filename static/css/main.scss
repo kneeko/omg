@@ -32,8 +32,8 @@ html, body {
 }
 
 body {
-    background-color: $background-color;
     max-width: 100%;
+    background-color: $background-color;
     font: $copy-font;
 }
 
@@ -350,7 +350,7 @@ div > .inner {
 
 #fruits img[class*=' fruit-'] {
     position: absolute;
-    @include transform(scaleZ(1.0));
+    @include transform( scaleZ(1.0) );
     @include user-select(none);
 }
 
@@ -365,6 +365,10 @@ div > .inner {
 
     @include transform( scale(0, 0) );
     @include transition( all 0.35s ease-in-out );
+}
+
+#fruits span.visible {
+    @include transform( scale(1, 1) );
 }
 
 #fruits img.fruit:hover {
@@ -403,7 +407,6 @@ div > .inner {
             top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         );
 }
-
 
 #fruits img.popped {
     top: 0%;

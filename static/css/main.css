@@ -468,8 +468,8 @@ html, body {
   height: 100%; }
 
 body {
-  background-color: #171e23;
   max-width: 100%;
+  background-color: #171e23;
   font: 18px/24px "source sans pro"; }
 
 h1 {
@@ -763,6 +763,13 @@ div > .inner {
   -webkit-transition: all 0.35s ease-in-out;
   -moz-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out; }
+
+#fruits span.visible {
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1); }
 
 #fruits img.fruit:hover {
   cursor: pointer; }
