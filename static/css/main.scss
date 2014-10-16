@@ -150,6 +150,7 @@ div > .inner {
 
 
 #gallery li h5 {
+    display: block;
     font-size: $h5-size;
     letter-spacing: 1px;
     color: #5d7b8f;
@@ -268,6 +269,7 @@ div > .inner {
     text-shadow: rgba(40, 40, 40, 0.5) 0 2px;
     font-size: $h2-size;
     line-height: 56px;
+    display: block;
 }
 
 #content h2 span {
