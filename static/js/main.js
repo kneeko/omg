@@ -6,6 +6,9 @@
 		var harvested = false;
 		var fruits = [];
 
+		var audio = document.getElementById('pop');
+		audio.volume = 0.2;
+
 		function getRandomInt(min, max) {
   			return Math.floor(Math.random() * (max - min)) + min;
 		}
@@ -86,7 +89,6 @@
 
 			spawnFruit(fruits, 1);
 
-			var audio = document.getElementById('pop');
 			window.setTimeout(function() { audio.play() }, 100);
 
 		};
