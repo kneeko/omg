@@ -7,9 +7,9 @@
   z-index: 1042;
   overflow: hidden;
   position: fixed;
-  background: #171E23;
-  opacity: 0.8;
-  filter: alpha(opacity=80); }
+  background: #000;
+  opacity: 0.5;
+  filter: alpha(opacity=50); }
 
 .mfp-wrap {
   top: 0;
@@ -380,5 +380,22 @@ img.mfp-img {
   top: 0;
   right: 0;
   padding-top: 0; }
+
+/* custom */
+.mfp-img.mfp-removing .mfp-container,
+.mfp-img.mfp-removing.mfp-bg {
+  opacity: 0; }
+
+.mfp-img.mfp-ready .mfp-container {
+  opacity: 1; }
+
+.mfp-img.mfp-ready.mfp-bg {
+  opacity: 0.8; }
+
+.mfp-bg {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
 
 /*# sourceMappingURL=magnific.css.map */

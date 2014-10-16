@@ -1,5 +1,4 @@
 @import 'reset';
-@import 'animate';
 @import 'magnific';
 
 /* 
@@ -13,7 +12,7 @@ html, body {
 body {
     background-color: #171E23;
     max-width: 100%;
-    font: 16px/24px 'source sans pro', sans-serif;
+    font: 18px/24px 'source sans pro', sans-serif;
 }
 
 h1 {
@@ -452,7 +451,7 @@ div > .inner {
 
     -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
     user-drag: none;
-    pointer-events:none;
+    //pointer-events:none;
 }
 
 #giraffe.hidden {
@@ -465,6 +464,7 @@ div > .inner {
 }
 
 #giraffe:active {
+    pointer-events:none;
     margin-bottom: -125px;
     transition: margin-bottom 0.2s ease-out;
 }
@@ -558,11 +558,4 @@ div > .inner {
     #content > div {
         padding: 0 15px;
     }
-}
-
-.mfp-bg {
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
 }

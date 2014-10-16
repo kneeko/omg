@@ -3,6 +3,7 @@
 		var amount = 11;
 		var score = 0;
 		var threshold = 40;
+		var harvested = false;
 		var fruits = [];
 
 		function getRandomInt(min, max) {
@@ -59,6 +60,11 @@
 			point.classList.add('point');
 			point.style.left = this.style.left;
 			point.style.top = this.style.top;
+
+			if ((score >= 10) && (!(harvested))) {
+				harvested = true;
+				load(24);
+			}
 
 			window.setTimeout(function(){
 				point.style.transform = 'scale(1, 1)';
@@ -227,7 +233,7 @@
 		delegate: 'a',
 		type: 'image',
 		tLoading: 'oops, image #%curr% isn\'t loading...',
-		mainClass: 'mfp-img-mobile',
+		mainClass: 'mfp-img',
 		gallery: {
 			enabled: true,
 			navigateByImgClick: true,

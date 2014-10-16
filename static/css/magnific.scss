@@ -27,8 +27,8 @@
 ////////////////////////
 
 // overlay
-$mfp-overlay-color: #171E23;
-$mfp-overlay-opacity: 0.8;
+$mfp-overlay-color: #000;
+$mfp-overlay-opacity: 0.5;
 $mfp-shadow: 0 0 8px rgba(0, 0, 0, 0);
 
 // spacing
@@ -642,4 +642,25 @@ button {
       padding-top: 0;
     }
   }
+}
+
+/* custom */
+
+.mfp-removing .mfp-container, 
+.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+.mfp-ready .mfp-container {
+    opacity: 1;
+}
+.mfp-ready.mfp-bg {
+    opacity: $mfp-overlay-opacity;
+}
+
+.mfp-bg {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
