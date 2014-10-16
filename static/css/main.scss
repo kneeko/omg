@@ -141,7 +141,6 @@ div > .inner {
 #gallery li {
     display: inline-block;
     width: 33.33333333333%;
-    height: 100px;
 }
 
 #gallery li img {
@@ -173,7 +172,7 @@ div > .inner {
     position: relative;
     display: block;
     margin: 0;
-    padding: $layout-gutter;
+    padding: $layout-gutter $layout-gutter 0 $layout-gutter;
 }
 
 #gallery li div a {
@@ -195,7 +194,7 @@ div > .inner {
     list-style: none;
     text-align: center;
     display: inline;
-    margin: 30px 0 0 0;
+    margin: 0;
     z-index: 20;
     position: relative;
 }
@@ -362,9 +361,9 @@ div > .inner {
     font-family: $header-font-stack;
     color: #fff;
     margin-top: 24px;
-    transform: scale(0, 0);
     text-shadow: rgba(82, 142, 151, 1) 0 2px;
 
+    @include transform( scale(0, 0) );
     @include transition( all 0.35s ease-in-out );
 }
 
@@ -378,7 +377,7 @@ div > .inner {
 }
 
 #fruits img.popped {
-    @include transform(scale(0, 0));
+    @include transform( scale(0, 0) );
 }
 
 #fruits img.fruit {
@@ -393,15 +392,12 @@ div > .inner {
 }
 
 #fruits img.vine {
-    //background: red;
     top: -10%;
     pointer-events:none;
     position: absolute;
 
-
-    @include transform(translate(0px, -90%) scale(0.12, 10));
-    @include transform-origin(50% 100%);
-
+    @include transform( translate(0px, -90%) scale(0.12, 10) );
+    @include transform-origin( 50% 100% );
     @include transition(
             all 0.35s ease-in-out,
             top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
