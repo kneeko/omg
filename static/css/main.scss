@@ -9,18 +9,17 @@ $shadow-color: rgba(82, 142, 151, 1);
 $layout-width: 800px;
 $layout-gutter: 15px;
 
+$header-font-stack: 'BPReplay', serif;
 $header-color: #5d7b8f;
-$header-font-stack: 'BPReplay';
-//$header-font: ;
 
 $h1-size: 48px;
 $h2-size: 28px;
 $h3-size: 28px;
 $h5-size: 20px;
 
-$copy-color: #5d7b8f;
-$copy-font-stack: 'source sans pro';
+$copy-font-stack: 'source sans pro', sans-serif;
 $copy-font: 18px/24px $copy-font-stack;
+$copy-color: #5d7b8f;
 
 /* 
 171E23
@@ -69,12 +68,12 @@ img {
 
 // hero element background
 // using a pseudo-element so that the height and width can be scaled proportionally
+
 #hero:after {
     content: '';
     display: block;
     background: rgba(255, 255, 255, 0.1);
     background-image: url('bg.jpg');
-    background-size: 650px;
     background-position: center bottom;
     background-repeat: repeat-x;
     background-color: #71B6C1;
@@ -86,6 +85,8 @@ img {
     max-height: 100%;
     margin: 0 auto;
     z-index: -1;
+
+    background-size: 700px;
 }
 
 div > .inner {
@@ -282,7 +283,8 @@ div > .inner {
     50%  { color: #73BA92; }
     100% { color: $copy-color; }
 }
-#content h2 span {
+
+.pulse {
     @include animation( pulsate 1.5s infinite );
 }
 

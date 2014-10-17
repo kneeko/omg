@@ -15,10 +15,16 @@
 	}
 	
 	var pop = function() {
-		// TODO create particles here
-		// TODO play sound
-		// get the class list of the element that was clicked
+
+		// TODO create particles
+
+		// increment the combo value
 		score++;
+
+		var classes = this.classList;
+		var parent = document.getElementById('fruits');
+
+		// set the scoreboard text
 		var scoreboard = document.getElementById('score');
 		var previous = scoreboard.innerHTML;
 		if (isNaN(parseInt(scoreboard.innerHTML))) {
@@ -26,8 +32,7 @@
 		} else {
 			scoreboard.innerHTML = parseInt(scoreboard.innerHTML) + score;
 		}
-		var classes = this.classList;
-		var parent = document.getElementById('fruits');
+
 		// get the unique class name (I could use a data attribute for this)
 		for (var i = 0; i < classes.length; i++) {
 			if (classes[i].indexOf('fruit-') == 0) {
@@ -51,11 +56,15 @@
 				classes.add('popped');
 			};
 		};
+
+		// create the score popup element
 		var point = document.createElement('span');
 		point.innerHTML = '+ ' + score;
 		point.classList.add('point');
 		point.style.left = this.style.left;
 		point.style.top = this.style.top;
+
+		// sequence the easing target changes
 		window.setTimeout(function(){
 			point.classList.add('visible');
 		}, 20);
@@ -68,15 +77,23 @@
 		window.setTimeout(function(){
 			parent.removeChild(point);
 		}, 750);
+
+		// add the point element to the dom
 		parent.appendChild(point);
+
+		// spawn a new fruit
 		spawnFruit(fruits, 1);
+
+		// play the pop sound effect (100ms delayed)
 		window.setTimeout(function() { audio.play() }, 100);
+
 	};
 	var seed = Math.ceil(Math.random() * 1000);
 	function random() {
 	    var x = Math.sin(seed++) * 100;
 	    return x - Math.floor(x);
 	}
+
 	// TODO finish this func
 	var findSpawn = function(pool) {
 		
@@ -125,6 +142,7 @@
 			}
 		};
 	};
+
 	var addFruit = function(x, y, i) {
 		// TODO pick from several fruit options	
 		var prefix = 'static/images/';
@@ -160,23 +178,31 @@
 		parent.appendChild(fruit);
 		//fruits.push(fruit);
 	};
+
 	var spawnFruit = function(pool, i) {
 		var position = findSpawn(pool);
 		if (position) {
 			addFruit(position.x, position.y, i);
 		};
 	};
+
 	var load = function(n) {
 		for (var i = 1; i < n; i++) {
 			spawnFruit(fruits, i)
 		};
 	}
+
+	// spawn fruits
 	window.setTimeout(function() { load(amount) }, 300);
+
+	// show giraffe
 	window.setTimeout(function() { document.getElementById('giraffe').classList.remove('hidden') }, 400);
+
+	// init magnific gallery
 	$('#gallery').magnificPopup({
 		delegate: 'a',
 		type: 'image',
-		tLoading: 'oops, image #%curr% isn\'t loading...',
+		tLoading: 'loading',
 		mainClass: 'mfp-img',
 		gallery: {
 			enabled: true,
@@ -184,7 +210,7 @@
 			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
 		},
 		image: {
-			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			tError: 'Oops, <a href="%url%">image %curr%</a> isn\'t loading...',
 		},
 		zoom: {
 			enabled: true,
