@@ -203,11 +203,18 @@ div > .inner {
 #badges li {
     display: inline-block;
     width: 170px;
-    height: 57px;
+    height: 60px;
     background: #2e2e2e;
     margin: 10px;
     border-radius: 5px;
     overflow: hidden;
+
+    background: #212b32;
+    border: solid 1px rgba(207,223,233,0.05);
+}
+
+#badges li:hover {
+    background-color: #3f5361;
 }
 
 #badges li a {
