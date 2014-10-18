@@ -204,6 +204,7 @@
 		type: 'image',
 		tLoading: 'loading',
 		mainClass: 'mfp-img',
+		type: 'iframe',
 		gallery: {
 			enabled: true,
 			navigateByImgClick: true,

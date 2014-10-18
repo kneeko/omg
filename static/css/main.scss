@@ -144,7 +144,7 @@ div > .inner {
     width: 33.33333333333%;
 }
 
-#gallery li img {
+#gallery li img, #gallery li video {
     width: 100%;
 }
 
@@ -182,7 +182,7 @@ div > .inner {
     line-height: 0;
 }
 
-#gallery li div a img, img.mfp-img {
+#gallery li div a img, #gallery li div a video, img.mfp-img {
     border-radius: 3px;
 }
 
