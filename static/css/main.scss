@@ -217,6 +217,10 @@ div > .inner {
     background-color: #3f5361;
 }
 
+#badges li:active {
+    top: 2px;
+}
+
 #badges li a {
     display: block;
     line-height: 0;
@@ -504,11 +508,16 @@ div > .inner {
     }
 
     #hero {
-        height: 380px;
+        height: 280px;
     }
 
     #giraffe {
-        height: 33%;
+        height: 80%;
+        margin-left: 10px;
+    }
+
+    #fruits {
+        display: none;
     }
 
     #content {
@@ -516,9 +525,8 @@ div > .inner {
         padding: $layout-gutter 0 $layout-gutter 0;
     }
 
-    #downloads li {
-        display: block;
-        margin: 0 0 10px 0;
+    #badges {
+        text-align: center;
     }
 
     #downloads {
