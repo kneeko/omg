@@ -17,7 +17,7 @@ $h2-size: 28px;
 $h3-size: 28px;
 $h5-size: 20px;
 
-$copy-font-stack: 'source sans pro', sans-serif;
+$copy-font-stack: 'source sans pro', 'Helvetica', 'Arial', sans-serif;
 $copy-font: 18px/24px $copy-font-stack;
 $copy-color: #5d7b8f;
 
@@ -214,7 +214,7 @@ div > .inner {
     margin: 10px;
     border-radius: 5px;
     overflow: hidden;
-
+    position: relative;
     background: #212b32;
     border: solid 1px rgba(7,23,33,0.1);
 }
@@ -382,6 +382,7 @@ div > .inner {
     color: #fff;
     margin-top: 24px;
     text-shadow: rgba(82, 142, 151, 1) 0 2px;
+    white-space: pre;
 
     @include transform( scale(0, 0) );
     @include transition( all 0.35s ease-in-out );
@@ -408,9 +409,9 @@ div > .inner {
     top: -10%;
 
     @include transition(
-            all 0.175s cubic-bezier(0.6, -0.28, 0.735, 0.045),
-            transform 0.175s ease-in-out,
-            top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+            //all 0.175s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+            transform 0.175s ease-in-out
+            //top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         );
 
 }
@@ -422,10 +423,13 @@ div > .inner {
 
     @include transform( translate(0px, -90%) scale(0.12, 10) );
     @include transform-origin( 50% 100% );
+
+    /*
     @include transition(
             all 0.35s ease-in-out,
             top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         );
+    */
 }
 
 #fruits img.popped {
@@ -464,19 +468,24 @@ div > .inner {
 
 }
 
+#hero:hover #giraffe {
+    //margin-bottom: -155px;
+    margin-bottom: -280px;
+    @include transition(margin-bottom 0.4s ease-out);
+}
+
 #giraffe.hidden {
-    margin-bottom: -100%;
+    margin-bottom: -280px;
     @include transition(margin-bottom 0.6s ease-out);
 }
 
-#giraffe:hover {
+#aasdasd #giraffe:hover {
     cursor: pointer;
-}
-
-#giraffe:active {
-    pointer-events:none;
-    margin-bottom: -125px;
-    @include transition(margin-bottom 0.2s ease-out);
+    margin-bottom: -155px;
+    @include transition(
+            margin-bottom 0.2s ease-out,
+            padding-top 0.2s ease-out
+        );
 }
 
 #grass {
@@ -509,6 +518,41 @@ div > .inner {
     }
 }
 
+@media (max-width: 500px) {
+
+    #downloads {
+        padding-right: 15px;
+    }
+
+    #downloads li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #footer {
+        height: auto;
+    }
+
+    #footer ul, #footer h3 {
+        text-align: center;
+        float: none;
+        margin: 0;
+    }
+
+    #footer ul {
+        margin: 0 0 10px 0;
+    }
+
+
+    #footer ul li {
+        display: block
+    }
+
+    #footer .inner {
+        padding: 0;
+    }
+}
+
 @media (max-width: 420px) {
     #gallery li {
         width: 100%;
@@ -518,9 +562,14 @@ div > .inner {
         height: 280px;
     }
 
+    #badges li a {
+        width: 155px;
+        height: 55px;
+        margin: 10px 5px;
+    }
+
     #giraffe {
-        height: 80%;
-        margin-left: 10px;
+        display: none;
     }
 
     #fruits {
@@ -538,13 +587,6 @@ div > .inner {
 
     #downloads {
         max-width: 100%;
-        padding-right: $layout-gutter * 2;
-        //padding: 0 15px;
-    }
-
-    #footer {
-        //height: 147px - 30px;
-        height: auto;
     }
 
     #wrapper {
@@ -555,21 +597,21 @@ div > .inner {
         height: auto;
     }
 
-    #footer ul, #footer h3 {
-        text-align: center;
-        float: none;
-        margin: 0 0 10px 0;
-    }
-
-    #footer ul li {
-        display: block
-    }
-
-    #footer .inner {
-        padding: 0;
-    }
-
     #content > div {
         padding: 0 $layout-gutter;
+    }
+}
+
+@media (max-width: 350px) {
+
+    #hero {
+        height: 320px;
+    }
+
+    #badges li a {
+        width: 170px;
+        height: 60px;
+        margin: 10px 10px -10px 10px;
+        line-height: 0;
     }
 }

@@ -43,7 +43,8 @@
 						var classes = child.classList;
 						for (var k = 0; k < classes.length; k++) {
 							if (classes[k].indexOf('vine') == 0) {
-								child.style.top = '0%';	
+								child.style.top = '0%';
+								$(child).animate({top: '0'}, 600, 'swing');
 							};
 						};
 						// create a timeout to destroy the element
@@ -97,9 +98,9 @@
 	// TODO finish this func
 	var findSpawn = function(pool) {
 		
-		var x = 33 * random();
+		var x = 3 + 30 * random();
 		if (random() > 0.5) {
-			x  = 66 + 33 * random();
+			x  = 66 + 30 * random();
 		};
 		var y = 20 + 75 * random();
 		return {'x': x, 'y': y}
@@ -160,8 +161,12 @@
 		fruit.style.left = x + '%';
 		vine.style.left = x + '%';
 		window.setTimeout(function() {
-			fruit.style.top = y + '%';
-			vine.style.top = y + '%';
+			//fruit.style.top = y + '%';
+
+			$(fruit).animate({top: y + '%'}, 1800, 'easeOutElastic');
+			$(vine).animate({top: y + '%'}, 1800, 'easeOutElastic');
+
+			//vine.style.top = y + '%';
 		}, i * 75);
 		//vine.style.top = y + '%';
 		//vine.style.height = y + '%';
