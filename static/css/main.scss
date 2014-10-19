@@ -112,23 +112,27 @@ div > .inner {
 }
 
 #hero h1, #hero h3 {
-    font-family: 'BPReplay';
     color: #fff;
     text-align: center;
-    line-height: 60px;
     pointer-events:none;
-    z-index: 15;
     position: relative;
+    z-index: 15;
 }
 
 #hero h1 {
+    line-height: 55px;
     font-size: $h1-size;
     text-shadow: $shadow-color 0 4px;
+    font-family: $header-font-stack;
 }
 
 #hero h3 {
+    line-height: 65px;
     font-size: $h3-size;
     text-shadow: $shadow-color 0 3px;
+    font-family: $copy-font-stack;
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
 
@@ -202,23 +206,26 @@ div > .inner {
 
 #badges li {
     display: inline-block;
+}
+
+#badges li a {
     width: 170px;
     height: 60px;
-    background: #2e2e2e;
     margin: 10px;
     border-radius: 5px;
     overflow: hidden;
 
     background: #212b32;
-    border: solid 1px rgba(207,223,233,0.05);
+    border: solid 1px rgba(7,23,33,0.1);
 }
 
-#badges li:hover {
+#badges li a:hover {
     background-color: #3f5361;
 }
 
-#badges li:active {
+#badges li a:active {
     top: 2px;
+    background-color: #2b3942;
 }
 
 #badges li a {
@@ -448,7 +455,7 @@ div > .inner {
 
     @include transition(
             all 0.55s ease-in-out,
-            margin-bottom 0.85s ease-out
+            margin-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1)
         );
 
 
