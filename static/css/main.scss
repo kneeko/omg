@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "reset";
 @import "bourbon/bourbon";
 @import "magnific";
@@ -407,13 +408,7 @@ div > .inner {
 
 #fruits img.fruit {
     top: -10%;
-
-    @include transition(
-            //all 0.175s cubic-bezier(0.6, -0.28, 0.735, 0.045),
-            transform 0.175s ease-in-out
-            //top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
-        );
-
+    @include transition(transform 0.175s ease-in-out);
 }
 
 #fruits img.vine {
@@ -423,13 +418,16 @@ div > .inner {
 
     @include transform( translate(0px, -90%) scale(0.12, 10) );
     @include transform-origin( 50% 100% );
+}
 
-    /*
+#fruits img.vine.popped {
+
+    /* override inline value applied via js */
+    top: 0% !important;
     @include transition(
             all 0.35s ease-in-out,
-            top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+            top 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         );
-    */
 }
 
 #fruits img.popped {
@@ -599,6 +597,10 @@ div > .inner {
 
     #content > div {
         padding: 0 $layout-gutter;
+    }
+
+    #content h2 {
+        font-size: 22px;
     }
 }
 

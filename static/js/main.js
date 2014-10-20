@@ -35,16 +35,24 @@
 
 		// get the unique class name (I could use a data attribute for this)
 		for (var i = 0; i < classes.length; i++) {
+
 			if (classes[i].indexOf('fruit-') == 0) {
+
 				var children = document.getElementsByClassName(classes[i]);
 				for (var j = 0; j < children.length; j++) {
 					(function(n) {
+
 						var child = children[n];
 						var classes = child.classList;
+						classes.add('popped');
 						for (var k = 0; k < classes.length; k++) {
 							if (classes[k].indexOf('vine') == 0) {
-								child.style.top = '0%';
-								$(child).animate({top: '0'}, 600, 'swing');
+
+								//child.style.top = '0%';
+								//child.classList.add('snapped');
+								//$(child).animate({top: '0'}, 600, 'swing');
+								//console.log('yo');
+
 							};
 						};
 						// create a timeout to destroy the element
@@ -54,8 +62,10 @@
 						
 					})(j);
 				};
-				classes.add('popped');
+				//classes.add('popped');
+
 			};
+
 		};
 
 		// create the score popup element
