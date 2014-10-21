@@ -33,7 +33,7 @@
 			scoreboard.innerHTML = parseInt(scoreboard.innerHTML) + score;
 		}
 
-		// get the unique class name (I could use a data attribute for this)
+		// get the indentifier and add a 'popped' class to its vine
 		for (var i = 0; i < classes.length; i++) {
 
 			if (classes[i].indexOf('fruit-') == 0) {
@@ -43,28 +43,16 @@
 					(function(n) {
 
 						var child = children[n];
-						var classes = child.classList;
-						classes.add('popped');
-						for (var k = 0; k < classes.length; k++) {
-							if (classes[k].indexOf('vine') == 0) {
-
-								//child.style.top = '0%';
-								//child.classList.add('snapped');
-								//$(child).animate({top: '0'}, 600, 'swing');
-								//console.log('yo');
-
-							};
-						};
-						// create a timeout to destroy the element
+						child.classList.add('popped');
 						window.setTimeout(function() {
 							parent.removeChild(child);
 						}, 600);
 						
 					})(j);
 				};
-				//classes.add('popped');
 
 			};
+
 
 		};
 
@@ -113,85 +101,44 @@
 			x  = 66 + 30 * random();
 		};
 		var y = 20 + 75 * random();
+
 		return {'x': x, 'y': y}
-		var spawned = false;
-		var attempts = 20;
-		while (!(spawned)) {
-			var valid = true;
-			var x = 33 * random();
-			if (random() > 0.5) {
-				x  = x + 33 + 33 * random();
-			};
-			var y = 15 + 70 * random();
-			// check existing spawns for proximity
-			for (var j = 0; j < pool.length; j++) {
-				var sx = pool[j].style.left;
-				var sy = pool[j].style.top;
-				var ex = sx.substring(0, sx.length - 1);
-				var ey = sy.substring(0, sy.length - 1);
-				// if the bid position is closer than threshold, invalidate it
-				var distance = Math.pow(ex - x, 2) + Math.pow(ey - y, 2);
-				if (distance <= Math.pow(threshold, 2)) {
-					//valid = false;
-				};
-				if ((Math.abs(ex - x) < 5) || (Math.abs(ey - y) < 5)) {
-					//valid = false;
-				};
-				// TODO check distance to others
-			};
-			if (valid) {
-				spawned = true;
-				console.log('found a spot ' + x + ', ' + y);
-				return {'x': x, 'y': y}
-			} else {
-				attempts--;
-			}
-			if (attempts <= 0) {
-				spawned = false;
-				return
-				console.log('failed to find a spawn location')
-			}
-		};
+
 	};
 
 	var addFruit = function(x, y, i) {
-		// TODO pick from several fruit options	
+
 		var prefix = 'static/images/';
 		var variant = 'fruit-' + getRandomInt(1, 4);
-		// TODO skip center
-		// TODO spread a little from other fruits
-		// maybe the index to set the z-index?
-		// TODO create a vine and position it the same way
+
 		var vine = document.createElement('img');
-		// create the img node
 		var fruit = document.createElement('img');
+
 		var identifier = 'fruit-' + x + '-' + y;
-		// position the node
-		//fruit.style.top = y + '%';
+
+		// set the x value immidiately
 		fruit.style.left = x + '%';
 		vine.style.left = x + '%';
-		window.setTimeout(function() {
-			//fruit.style.top = y + '%';
 
+		// stagger the top animation
+		window.setTimeout(function() {
 			$(fruit).animate({top: y + '%'}, 1500, 'easeOutElastic');
 			$(vine).animate({top: y + '%'}, 1500, 'easeOutElastic');
-
-			//vine.style.top = y + '%';
 		}, i * 75);
-		//vine.style.top = y + '%';
-		//vine.style.height = y + '%';
-		//vine.style.width = '5px';
-		// attach the selected src
+
 		fruit.src = prefix + variant + '.png';
 		vine.src = prefix + 'vine.png';
+
 		// add the click handler
 		fruit.onclick = pop;
-		// add the node to the dom!
+
+		// add classes
 		vine.classList.add('vine', identifier)
 		fruit.classList.add('fruit', identifier)
+
+		// add the node to the dom!
 		parent.appendChild(vine);
 		parent.appendChild(fruit);
-		//fruits.push(fruit);
 	};
 
 	var spawnFruit = function(pool, i) {
