@@ -236,4 +236,10 @@
 		}
 	});
 
+	$('a[href="#soon"]').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		closeBtnInside: false,
+	});
+
 })();

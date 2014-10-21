@@ -226,7 +226,7 @@ div > .inner {
 .content .emphasis {
     background-color: #212b32;
     border-radius: 3px;
-    margin: 15px 0;
+    margin: $layout-gutter*2 0 $layout-gutter 0;
     display: block;
     padding: $layout-gutter;
     text-align: center;
@@ -244,7 +244,7 @@ div > .inner {
     margin: 0;
     display: inline-block;
     line-height: 0;
-    vertical-align: middle;
+    vertical-align: top;
 }
 
 .content .quote h3 {
@@ -417,12 +417,10 @@ div.quote span {
 }
 
 span.icon {
-    width: 42px;
-    height: 42px;
+    width: 50px;
+    height: 50px;
     display: inline-block;
     border-radius: 4px;
-    background: #212b32;
-    border: solid 1px rgba(207,223,233,0.05);
     padding: 3px;
     text-align: center;
     font-size: 16px;
@@ -635,6 +633,53 @@ i.small {
     position: relative;
 }
 
+#soon {
+    padding: 20px 30px 20px 20px;
+    text-align: left;
+    max-width: 300px;
+    margin: 40px auto;
+    position: relative;
+    border-radius: 4px;
+    background: #212b32;
+    border: solid 1px;
+    line-height: 28px;
+    font-family: "BPReplay",serif;
+    font-size: 0;
+    vertical-align: middle;
+    border: none;
+    text-align: center;
+}
+
+#soon img {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 6px;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #DFE6E8;
+    border-top: 10px solid transparent;
+}
+
+.bubble {
+    font-size: 24px;
+    letter-spacing: 1px;
+    background: #DFE6E8;
+    padding: 10px $layout-gutter 12px $layout-gutter;
+    line-height: 30px;
+    border-radius: 3px;
+    color: #555;
+    border-bottom: 1px solid rgba(40,40,40,0.5);
+}
+
+#soon h2 {
+    display: inline-block;
+}
 
 @font-face {
     font-family: 'BPReplay';
