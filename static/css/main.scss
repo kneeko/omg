@@ -412,8 +412,8 @@ div.quote span {
 }
 
 .content .slogan {
-    line-height: 32px;
-    margin: $layout-gutter 0;
+    line-height: 42px;
+    margin: ($layout-gutter - 2px) 0 $layout-gutter 0;
 }
 
 span.icon {
@@ -617,7 +617,6 @@ i.small {
 }
 
 #hero:hover #giraffe {
-    //margin-bottom: -155px;
     margin-bottom: -280px;
     @include transition(margin-bottom 0.4s ease-out);
 }
@@ -625,15 +624,6 @@ i.small {
 #giraffe.hidden {
     margin-bottom: -280px;
     @include transition(margin-bottom 0.6s ease-out);
-}
-
-#aasdasd #giraffe:hover {
-    cursor: pointer;
-    margin-bottom: -155px;
-    @include transition(
-            margin-bottom 0.2s ease-out,
-            padding-top 0.2s ease-out
-        );
 }
 
 #grass {
@@ -718,6 +708,10 @@ i.small {
         width: 155px;
         height: 55px;
         margin: 10px 5px;
+    }
+
+    .content .slogan {
+        line-height: 32px;
     }
 
     #giraffe {
