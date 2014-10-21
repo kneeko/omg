@@ -230,10 +230,6 @@
 		image: {
 			tError: 'Oops, <a href="%url%">image %curr%</a> isn\'t loading...',
 		},
-		zoom: {
-			enabled: true,
-			duration: 300 // don't foget to change the duration also in CSS
-		}
 	});
 
 	$('a[href="#soon"]').magnificPopup({

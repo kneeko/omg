@@ -226,6 +226,7 @@ div > .inner {
 .content .emphasis {
     background-color: #212b32;
     border-radius: 3px;
+    border: solid 1px rgba(207,223,233,0.05);
     margin: $layout-gutter*2 0 $layout-gutter 0;
     display: block;
     padding: $layout-gutter;
