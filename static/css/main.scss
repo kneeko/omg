@@ -544,7 +544,6 @@ i.small {
 
 #fruits img.fruit:hover {
     cursor: pointer;
-    //@include filter(brightness(1.1));
 }
 
 #fruits img.fruit:active {
@@ -552,12 +551,12 @@ i.small {
 }
 
 #fruits img.popped {
-    @include transform( scale(0, 0) );
+    @include transform(scale(0, 0));
 }
 
 #fruits img.fruit {
     top: -10%;
-    @include transition(transform 0.175s ease-in-out);
+    @include transition(transform 0.325s ease-in-out);
 }
 
 #fruits img.vine {
@@ -570,13 +569,9 @@ i.small {
 }
 
 #fruits img.vine.popped {
-
     /* override inline value applied via js */
     top: 0% !important;
-    @include transition(
-            all 0.35s ease-in-out,
-            top 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)
-        );
+    @include transition(top 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275));
 }
 
 #fruits img.popped {
