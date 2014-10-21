@@ -4,7 +4,6 @@
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width, initial-scale = 1.0, user-scalable = no' />
 	<meta name='description' content='oh my giraffe' />
-
 	<title>oh my giraffe</title>
 	<link rel="stylesheet" href="static/css/main.css">
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -13,134 +12,121 @@
 	<![endif]-->
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,600italic' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
-<div id='preload' style='display: none'>
-	<img src='static/images/fruit-1.png'>
-	<img src='static/images/fruit-2.png'>
-	<img src='static/images/fruit-3.png'>
-	<img src='static/images/vine.png'>
-	<img src='static/images/giraffe.png'>
-</div>
-<div id='wrapper'>
-	<div id='hero' class=''>
-		<div class='inner'>
-			<img id='giraffe' class='hidden' src='static/images/giraffe.png'>
-			<div class=''>
-				<h1>oh my giraffe</h1>
-				<h3>a savannah adventure</h3>
-				<ul class='badges'>
-					<li><a href='#'><img src='static/images/ios.png'></a></li>
-					<li><a href='#'><img src='static/images/android.png'></a></li>
+	<div id='preload' style='display: none'>
+		<img src='static/images/fruit-1.png'>
+		<img src='static/images/fruit-2.png'>
+		<img src='static/images/fruit-3.png'>
+		<img src='static/images/vine.png'>
+		<img src='static/images/giraffe.png'>
+	</div>
+	<div id='wrapper'>
+		<div id='hero' class=''>
+			<div class='inner'>
+				<img id='giraffe' class='hidden' src='static/images/giraffe.png'>
+				<div class=''>
+					<h1>oh my giraffe</h1>
+					<h3>a savannah adventure</h3>
+					<ul class='badges'>
+						<li><a href='#'><img src='static/images/ios.png'></a></li>
+						<li><a href='#'><img src='static/images/android.png'></a></li>
+					</ul>
+				</div>
+			</div>
+			<div id='fruits'><audio src='static/audio/pop.mp3' id='pop'></audio></div>
+			<div id='score'></div>
+		</div>
+		<div class='content'>
+			<div class='inner'>
+				<h2 class='slogan'>
+					A game about <span class='yellow'>giraffes</span> eating <span class='pink'>fruit</span> while running from <span class='orange'>lions</span>.
+				</h2>
+				<ul class='gallery'>
+					<li>
+						<div>
+							<a href='static/css/bg.jpg'>
+								<img src='static/images/gameplay-1.gif'/>
+							</a>
+							<h5>really long necks<i class="fa fa-check-square"></i></h5>
+						</div>
+					</li>
+					
+					<li>
+						<div>
+							<a href='static/css/bg.jpg'>
+								<img src='static/images/gameplay-5.gif'/>
+							</a>
+							<h5>off-the-hook wipeouts<i class="fa fa-check-square"></i></h5>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href='static/css/bg.jpg'>
+								<img src='static/images/gameplay-3.gif'/>
+							</a>
+							<h5>big cat carnage<i class="fa fa-check-square"></i></h5>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href='static/css/bg.jpg'>
+								<img src='static/images/gameplay-4.gif'/>
+							</a>
+							<h5>gripping combo system<i class="fa fa-check-square"></i></h5>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href='static/css/bg.jpg'>
+								<img src='static/images/gameplay-2.gif'/>
+							</a>
+							<h5>tranquil evenings<i class="fa fa-check-square"></i></h5>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href='static/css/bg.jpg'>
+								<img src='static/images/gameplay-6.gif'/>
+							</a>
+							<h5>day-night cycle<i class="fa fa-check-square"></i></h5>
+						</div>
+					</li>
 				</ul>
+				<div class='emphasis'>
+					<div class='quote'>
+						<h3><span>&ldquo;</span>I've always wanted to feed a giraffe.<span>&rdquo;</span></h3>
+						<h4 class='pink'>Zoo Keeper</h4>
+					</div>
+					<div class='quote'>
+						<h3><span>&ldquo;</span>You want a quote? What for?<span>&rdquo;</span></h3>
+						<h4 class='orange'>Coffee Drinker</h4>
+					</div>
+				</div>
+				<h2><i class="fa fa-download green pulse small"></i> try it out on desktop</h2>
+				<ul id='downloads'>
+					<li class='platform'><a href='#'><i class="fa fa-windows fa-2x"></i> Windows XP +</li></a>
+					<li class='platform'><a href='#'><i class="fa fa-apple fa-2x"></i> Mac OS X 10.6 +</li></a>
+					<li class='platform'><a href='#'><i class="fa fa-linux fa-2x"></i> Linux</li></a>
+				</ul>
+				<br>
 			</div>
 		</div>
-		<div id='fruits'><audio src='static/audio/pop.mp3' id='pop'></audio></div>
-		<div id='score'></div>
+		<div id="push"></div>
+		</div>
 	</div>
-	<div class='content'>
+	<div id='footer'>
 		<div class='inner'>
-
-			<h2 class='slogan'>
-				A game about <span class='yellow'>giraffes</span> eating <span class='pink'>fruit</span> while running from <span class='orange'>lions</span>.
-			</h2>
-
-			<!--
-			<span class='icon'><img src='static/images/giraffe.png'></span>
-			<span class='icon'><img src='static/images/fruit-2.png'></span>
-			<span class='icon'><img src='static/images/lion.png'></span>
-			-->
-			
-			<ul class='gallery'>
-				<li>
-					<div>
-						<a href='static/css/bg.jpg'>
-							<img src='static/images/gameplay-1.gif'/>
-						</a>
-						<h5>really long necks<i class="fa fa-check-square"></i></h5>
-					</div>
-				</li>
-				
-				<li>
-					<div>
-						<a href='static/css/bg.jpg'>
-							<img src='static/images/gameplay-5.gif'/>
-						</a>
-						<h5>off-the-hook wipeouts<i class="fa fa-check-square"></i></h5>
-					</div>
-				</li>
-				<li>
-					<div>
-						<a href='static/css/bg.jpg'>
-							<img src='static/images/gameplay-3.gif'/>
-						</a>
-						<h5>big cat carnage<i class="fa fa-check-square"></i></h5>
-					</div>
-				</li>
-				<li>
-					<div>
-						<a href='static/css/bg.jpg'>
-							<img src='static/images/gameplay-4.gif'/>
-						</a>
-						<h5>gripping combo system<i class="fa fa-check-square"></i></h5>
-					</div>
-				</li>
-				<li>
-					<div>
-						<a href='static/css/bg.jpg'>
-							<img src='static/images/gameplay-2.gif'/>
-						</a>
-						<h5>tranquil evenings<i class="fa fa-check-square"></i></h5>
-					</div>
-				</li>
-				<li>
-					<div>
-						<a href='static/css/bg.jpg'>
-							<img src='static/images/gameplay-6.gif'/>
-						</a>
-						<h5>day-night cycle<i class="fa fa-check-square"></i></h5>
-					</div>
-				</li>
+			<ul>
+				<li><a href='/support'>support</a></li>
+				<li><a href='/presskit'>press kit</a></li>
+				<li><a href='https://twitter.com/oh_my_giraffe' target='_blank'>twitter</a></li>
 			</ul>
-				
-			<div class='emphasis'>
-				<div class='quote'>
-					<h3><span>&ldquo;</span>I've always wanted to feed a giraffe.<span>&rdquo;</span></h3>
-					<h4 class='pink'>Zoo Keeper</h4>
-				</div>
-				<div class='quote'>
-					<h3><span>&ldquo;</span>You want a quote? What for?<span>&rdquo;</span></h3>
-					<h4 class='orange'>Coffee Drinker</h4>
-				</div>
-			</div>
-
-			<h2>try it out on desktops<span class='pulse super'>free </span></h2>
-			<ul id='downloads'>
-				<li class='platform'><a href='#'><i class="fa fa-windows fa-2x"></i> Windows XP +</li></a>
-				<li class='platform'><a href='#'><i class="fa fa-apple fa-2x"></i> Mac OS X 10.6 +</li></a>
-				<li class='platform'><a href='#'><i class="fa fa-linux fa-2x"></i> Linux</li></a>
-			</ul>
-
-			<br>
-
+			<h3>&copy; kneeko, 2014 <span>made with <a href='//love2d.org'>LÖVE</a></span></h3>
 		</div>
 	</div>
-	<div id="push"></div>
-	</div>
-</div>
-<div id='footer'>
-	<div class='inner'>
-		<ul>
-			<li><a href='mailto:help@ohmygiraffe.com' target='_blank'>support</a></li>
-			<li><a href='#'>press kit</a></li>
-			<li><a href='https://twitter.com/oh_my_giraffe' target='_blank'>twitter</a></li>
-		</ul>
-		<h3>&copy; kneeko, 2014 <span>made with <a href='//love2d.org'>LÖVE</a></span></h3>
-	</div>
-</div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src='static/js/magnific.min.js'></script>
-<script src='static/js/jquery.easing.js'></script>
-<script src='static/js/main.js'></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src='static/js/magnific.min.js'></script>
+	<script src='static/js/jquery.easing.js'></script>
+	<script src='static/js/main.js'></script>
 </body>
 </html>
