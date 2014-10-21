@@ -18,7 +18,7 @@ $h1-size: 48px;
 $h2-size: 28px;
 $h3-size: 28px;
 $h4-size: 22px;
-$h5-size: 20px;
+$h5-size: 18px;
 
 $copy-font-stack: 'source sans pro', 'Helvetica', 'Arial', sans-serif;
 $copy-font: 18px/24px $copy-font-stack;
@@ -160,6 +160,7 @@ div > .inner {
     letter-spacing: 1px;
     color: #5d7b8f;
     font-variant: small-caps;
+    font-weight: bold;
     opacity: 0.9;
     padding-top: 10px;
     vertical-align: middle;
@@ -352,7 +353,7 @@ div.quote span {
 
 #footer ul {
     float: right;
-    margin-right: $layout-gutter*2;
+    margin-right: $layout-gutter;
 }
 
 #footer ul li {
@@ -409,6 +410,26 @@ div.quote span {
 .content .slogan {
     line-height: 32px;
     margin: $layout-gutter 0;
+}
+
+span.icon {
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    border-radius: 4px;
+    background: #212b32;
+    border: solid 1px rgba(207,223,233,0.05);
+    padding: 3px;
+    text-align: center;
+    font-size: 16px;
+    font-family: $header-font-stack;
+    line-height: 0;
+    vertical-align: middle;
+}
+
+span.icon img {
+    max-height: 100%;
+    display: inline-block;
 }
 
 .content h2 span.super {
