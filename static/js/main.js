@@ -173,8 +173,8 @@
 		window.setTimeout(function() {
 			//fruit.style.top = y + '%';
 
-			$(fruit).animate({top: y + '%'}, 1800, 'easeOutElastic');
-			$(vine).animate({top: y + '%'}, 1800, 'easeOutElastic');
+			$(fruit).animate({top: y + '%'}, 1500, 'easeOutElastic');
+			$(vine).animate({top: y + '%'}, 1500, 'easeOutElastic');
 
 			//vine.style.top = y + '%';
 		}, i * 75);
@@ -208,13 +208,16 @@
 	}
 
 	// spawn fruits
-	window.setTimeout(function() { load(amount) }, 300);
+	window.setTimeout(function() { load(amount) }, 600);
 
 	// show giraffe
-	window.setTimeout(function() { document.getElementById('giraffe').classList.remove('hidden') }, 400);
+	window.setTimeout(function() {
+		var giraffe = document.getElementById('giraffe');
+		giraffe.classList.remove('hidden');
+	}, 1200);
 
 	// init magnific gallery
-	$('#gallery').magnificPopup({
+	$('.gallery').magnificPopup({
 		delegate: 'a',
 		type: 'image',
 		tLoading: 'loading',

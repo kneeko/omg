@@ -2,6 +2,7 @@
 @import "reset";
 @import "bourbon/bourbon";
 @import "magnific";
+@import "animate";
 
 
 $background-color: #171E23;
@@ -16,6 +17,7 @@ $header-color: #5d7b8f;
 $h1-size: 48px;
 $h2-size: 28px;
 $h3-size: 28px;
+$h4-size: 22px;
 $h5-size: 20px;
 
 $copy-font-stack: 'source sans pro', 'Helvetica', 'Arial', sans-serif;
@@ -73,7 +75,6 @@ img {
 #hero:after {
     content: '';
     display: block;
-    background: rgba(255, 255, 255, 0.1);
     background-image: url('bg.jpg');
     background-position: center bottom;
     background-repeat: repeat-x;
@@ -92,8 +93,7 @@ img {
 
 div > .inner {
     position: relative;
-    width: $layout-width;
-    max-width: 100%;
+    max-width: $layout-width;
     margin: 0 auto;
     padding: 0;
 }
@@ -137,24 +137,24 @@ div > .inner {
 }
 
 
-#gallery {
+.gallery {
     font-size: 0;
     list-style: none;
     margin: auto (-$layout-gutter);
-    max-width: 100%;
+    //max-width: 100%;
 }
 
-#gallery li {
+.gallery li {
     display: inline-block;
     width: 33.33333333333%;
 }
 
-#gallery li img, #gallery li video {
+.gallery li img, .gallery li video {
     width: 100%;
 }
 
 
-#gallery li h5 {
+.gallery li h5 {
     display: block;
     font-size: $h5-size;
     letter-spacing: 1px;
@@ -165,7 +165,7 @@ div > .inner {
     vertical-align: middle;
 }
 
-#gallery li h5 i {
+.gallery li h5 i {
     vertical-align: middle;
     float: right;
     position: relative;
@@ -174,28 +174,136 @@ div > .inner {
     opacity: 0.8;
 }
 
-#gallery li div {
+.gallery li div {
     position: relative;
     display: block;
     margin: 0;
     padding: $layout-gutter $layout-gutter 0 $layout-gutter;
 }
 
-#gallery li div a {
+.gallery li div a {
     display: block;
     font-size: 0;
     line-height: 0;
 }
 
-#gallery li div a img, #gallery li div a video, img.mfp-img {
+.gallery li div a img, .gallery li div a video, img.mfp-img {
     border-radius: 3px;
 }
 
-#gallery li div a:hover img {
+.gallery li div a:hover img {
     opacity: 0.9;
 }
 
-#badges {
+.gallery.quotes li div {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.content h3 {
+    font-size: $h3-size;
+    font-family: $header-font-stack;
+    line-height: 32px;
+}
+
+.content h4 {
+    font-size: $h4-size;
+    font-family: $header-font-stack;
+    line-height: 32px;
+}
+
+.content h3.emphasis {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-left: $layout-gutter * -2;
+    padding: $layout-gutter $layout-gutter * 2;
+}
+
+
+
+.content .emphasis {
+    background-color: #212b32;
+    border-radius: 3px;
+    margin: 15px 0;
+    display: block;
+    padding: $layout-gutter;
+    text-align: center;
+    position: relative;
+    line-height: 0;
+    font-size: 0;
+}
+
+.content .emphasis .more {
+}
+
+.content div.quote {
+    padding: 0;
+    width: 50%;
+    margin: 0;
+    display: inline-block;
+    line-height: 0;
+    vertical-align: middle;
+}
+
+.content .quote h3 {
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+div.quote span {
+    font-family: $copy-font-stack;
+    font-weight: bold;
+    font-size: 36px;
+    opacity: 0.5;
+    margin: 0 3px;
+}
+
+.quote {
+    background-color: #212b32;
+    border-radius: 3px;
+    margin: 15px 0;
+    display: block;
+}
+
+.content .badges li a {
+    margin-left: 0;
+    margin-right: $layout-gutter;
+    border: solid 1px rgba(207,223,233,0.05);
+}
+
+.center {
+    text-align: center;
+}
+
+.pink {
+    color: #AA4D8D;
+}
+
+.yellow {
+    color: #FFFF8C;
+    opacity: 0.8;
+}
+
+.orange {
+    color: #E0A553;
+    opacity: 0.9;
+}
+
+.green {
+    color: #73BA92;
+    opacity: 0.8;
+}
+
+.blue {
+    color: #71B6C1;
+}
+
+.purple {
+    color: #724a87;
+}
+
+.badges {
     font-size: 0;
     list-style: none;
     text-align: center;
@@ -205,11 +313,11 @@ div > .inner {
     position: relative;
 }
 
-#badges li {
+.badges li {
     display: inline-block;
 }
 
-#badges li a {
+.badges li a {
     width: 170px;
     height: 60px;
     margin: 10px;
@@ -220,16 +328,16 @@ div > .inner {
     border: solid 1px rgba(7,23,33,0.1);
 }
 
-#badges li a:hover {
+.badges li a:hover {
     background-color: #3f5361;
 }
 
-#badges li a:active {
+.badges li a:active {
     top: 2px;
     background-color: #2b3942;
 }
 
-#badges li a {
+.badges li a {
     display: block;
     line-height: 0;
 }
@@ -266,32 +374,44 @@ div > .inner {
     opacity: 0.6;
 }
 
-#content {
+.content {
     padding: 15px 0 15px 0;
     color: $copy-color;
     overflow: hidden;
 }
 
-#content > div {
+.content.light {
+    background-color: #71B6C1;
+    background-color: #212b32;
+}
+
+.content > div {
     padding: 0 15px;
 }
 
-#content hr {
+.content hr {
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: 1px solid #2f3a45;
+    padding-top: 10px;
+    opacity: 0.6;
 }
 
-#content h2 {
+.content h2 {
     font-family: $header-font-stack;
     text-shadow: rgba(40, 40, 40, 0.5) 0 2px;
     font-size: $h2-size;
-    line-height: 56px;
+    line-height: 52px;
     display: block;
 }
 
-#content h2 span {
+.content .slogan {
+    line-height: 32px;
+    margin: $layout-gutter 0;
+}
+
+.content h2 span.super {
     font-size: 16px;
     vertical-align: super;
     margin-left: 5px;
@@ -322,6 +442,7 @@ div > .inner {
     background: #212b32;
     border: solid 1px rgba(207, 223, 233, 0.05);
     position: relative;
+    text-align: left;
 }
 
 #downloads a {
@@ -353,7 +474,11 @@ div > .inner {
     vertical-align: middle;
 }
 
-#content h2.pulse {
+i.small {
+    @include transform(scale(0.7, 0.7));
+}
+
+.content h2.pulse {
 
 }
 
@@ -503,7 +628,7 @@ div > .inner {
 
 
 @media (max-width: 800px) {
-    #gallery li {
+    .gallery li {
         width: 50%;
     }
 
@@ -518,13 +643,9 @@ div > .inner {
 
 @media (max-width: 500px) {
 
-    #downloads {
-        padding-right: 15px;
-    }
-
     #downloads li {
         display: block;
-        margin-bottom: 10px;
+        margin: 0 0 10px 0;
     }
 
     #footer {
@@ -549,10 +670,18 @@ div > .inner {
     #footer .inner {
         padding: 0;
     }
+
+    .content div.quote {
+        padding: $layout-gutter 0;
+        width: 100%;
+        margin: 0;
+        display: block;
+        line-height: 0;
+    }
 }
 
 @media (max-width: 420px) {
-    #gallery li {
+    .gallery li {
         width: 100%;
     }
 
@@ -560,7 +689,7 @@ div > .inner {
         height: 280px;
     }
 
-    #badges li a {
+    .badges li a {
         width: 155px;
         height: 55px;
         margin: 10px 5px;
@@ -574,12 +703,12 @@ div > .inner {
         display: none;
     }
 
-    #content {
+    .content {
         width: 100%;
         padding: $layout-gutter 0 $layout-gutter 0;
     }
 
-    #badges {
+    .badges {
         text-align: center;
     }
 
@@ -595,11 +724,11 @@ div > .inner {
         height: auto;
     }
 
-    #content > div {
+    .content > div {
         padding: 0 $layout-gutter;
     }
 
-    #content h2 {
+    .content h2 {
         font-size: 22px;
     }
 }
@@ -610,7 +739,7 @@ div > .inner {
         height: 320px;
     }
 
-    #badges li a {
+    .badges li a {
         width: 170px;
         height: 60px;
         margin: 10px 10px -10px 10px;
