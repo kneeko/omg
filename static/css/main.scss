@@ -159,13 +159,49 @@ div > .inner {
     vertical-align: middle;
 }
 
-.gallery li h5, .mfp-title, {
+.gallery li h5, .clip h5 {
     font-size: $h5-size;
     letter-spacing: 1px;
     color: #5d7b8f;
     font-variant: small-caps;
     font-weight: bold;
     opacity: 0.9;
+}
+
+.clip {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    max-width: 85%;
+    max-height: 85%;
+}
+
+.clip h5 {
+    text-align: left;
+    color: #fff;
+}
+
+.clip h5 i {
+    vertical-align: middle;
+    float: right;
+    position: relative;
+    top: 5px;
+    color: #73BA92;
+}
+
+.clip div {
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    text-align: left;
+}
+
+.clip video {
+    width: 720px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 3px;
+    display: block;
 }
 
 .mfp-title {

@@ -183,7 +183,7 @@
 	// init magnific gallery
 	$('.gallery').magnificPopup({
 		delegate: 'a',
-		type: 'image',
+		type: 'inline',
 		tLoading: 'loading',
 		mainClass: 'mfp-img',
 		gallery: {
@@ -193,7 +193,20 @@
 		},
 		image: {
 			tError: 'Oops, <a href="%url%">image %curr%</a> isn\'t loading...',
+			titleSrc: 'title',
 		},
+		callbacks: {
+			open: function() {
+				var parent = this.currItem.inlineElement[0];
+				var video = parent.getElementsByTagName('video');
+				video[0].play();
+			},
+			change: function() {
+				var parent = this.currItem.inlineElement[0];
+				var video = parent.getElementsByTagName('video');
+				video[0].play();
+			},
+		}
 	});
 
 	$('a[href="#soon"]').magnificPopup({
