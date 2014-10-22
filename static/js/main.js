@@ -1,14 +1,5 @@
 ;(function() {
 
-	// preload
-	$.get('static/images/giraffe.png');
-	$.get('static/images/giraffe-b.png');
-	$.get('static/images/fruit-1.png');
-	$.get('static/images/fruit-2.png');
-	$.get('static/images/fruit-3.png');
-	$.get('static/images/fruit-1.png');
-	$.get('static/images/vine.png');
-
 	var giraffe = document.getElementById('giraffe');
 	var parent = document.getElementById('fruits');
 	var amount = 11;
