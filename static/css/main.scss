@@ -101,13 +101,13 @@ div > .inner {
     height: 100%;
 }
 
-#hero .inner > div {
+#hero .header {
     padding-top: 40px;
     height: 100%;
     text-align: center;
 }
 
-#hero .inner > div * {
+#hero .header * {
     text-align: center;
 }
 
@@ -245,7 +245,7 @@ div > .inner {
     margin: 0;
     display: inline-block;
     line-height: 0;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 .content .quote h3 {
@@ -592,6 +592,18 @@ i.small {
     letter-spacing: 1px;
 }
 
+@include keyframes(bobble) {
+    0% {
+        @include transform(translateY(0));
+    }
+    50% {
+        @include transform(translateY(5px));
+    }
+    100% {
+        @include transform(translateY(0));
+    }
+}
+
 #giraffe {
     height: 240px;
     position: absolute;
@@ -603,6 +615,8 @@ i.small {
             all 0.55s ease-in-out,
             margin-bottom 0.85s cubic-bezier(0.23, 1, 0.32, 1)
         );
+
+    @include animation(bobble 5.0s infinite);
 
 
     -webkit-user-drag: none;
@@ -636,45 +650,16 @@ i.small {
     margin: 40px auto;
     position: relative;
     border-radius: 4px;
-    background: #212b32;
+    background: #71B6C1;
     border: solid 1px;
     line-height: 28px;
     font-family: "BPReplay",serif;
-    font-size: 0;
+    font-size: 28px;
     vertical-align: middle;
     border: none;
     text-align: center;
-}
-
-#soon img {
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 6px;
-}
-
-.triangle {
-    width: 0;
-    height: 0;
-    display: inline-block;
-    border-left: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid #DFE6E8;
-    border-top: 10px solid transparent;
-}
-
-.bubble {
-    font-size: 24px;
-    letter-spacing: 1px;
-    background: #DFE6E8;
-    padding: 10px $layout-gutter 12px $layout-gutter;
-    line-height: 30px;
-    border-radius: 3px;
-    color: #555;
-    border-bottom: 1px solid rgba(40,40,40,0.5);
-}
-
-#soon h2 {
-    display: inline-block;
+    color: #fff;
+    text-shadow: #528e97 0 2px;
 }
 
 @font-face {

@@ -1,5 +1,15 @@
 ;(function() {
 
+	// preload
+	$.get('static/images/giraffe.png');
+	$.get('static/images/giraffe-b.png');
+	$.get('static/images/fruit-1.png');
+	$.get('static/images/fruit-2.png');
+	$.get('static/images/fruit-3.png');
+	$.get('static/images/fruit-1.png');
+	$.get('static/images/vine.png');
+
+	var giraffe = document.getElementById('giraffe');
 	var parent = document.getElementById('fruits');
 	var amount = 11;
 	var score = 0;
@@ -154,12 +164,26 @@
 		};
 	}
 
+	var blink = function() {
+		giraffe.src = 'static/images/giraffe-b.png';
+		window.setTimeout(function() {
+			giraffe.src = 'static/images/giraffe.png';
+		}, 160);
+	};
+
+	(function loop() {
+		var timer = Math.round(Math.random() * (3000 - 500)) + 8000;
+		window.setTimeout(function() {
+			blink();
+			loop();
+		}, timer);
+	})();
+
 	// spawn fruits
 	window.setTimeout(function() { load(amount) }, 600);
 
 	// show giraffe
 	window.setTimeout(function() {
-		var giraffe = document.getElementById('giraffe');
 		giraffe.classList.remove('hidden');
 	}, 1200);
 
