@@ -153,17 +153,38 @@ div > .inner {
     background-color: #5d7b8f;
 }
 
-
 .gallery li h5 {
     display: block;
+    padding-top: 10px;
+    vertical-align: middle;
+}
+
+.gallery li h5, .mfp-title, {
     font-size: $h5-size;
     letter-spacing: 1px;
     color: #5d7b8f;
     font-variant: small-caps;
     font-weight: bold;
     opacity: 0.9;
-    padding-top: 10px;
-    vertical-align: middle;
+}
+
+.mfp-title {
+    font-family: $copy-font-stack;
+    color: #fff;
+}
+
+.mfp-counter {
+    display: none;
+}
+
+.mfp-close {
+    font-family: $header-font-stack;
+    font-weight: bold;
+}
+
+.mfp-arrow-right:before, .mfp-arrow-right .mfp-b,
+.mfp-arrow-left:before, .mfp-arrow-left .mfp-b {
+    border: none;
 }
 
 .gallery li h5 i {
