@@ -173,6 +173,8 @@
 	// spawn fruits
 	window.setTimeout(function() { load(amount) }, 600);
 
+	var konami = new Konami(function() { load(24) });
+
 	// show giraffe
 	window.setTimeout(function() {
 		giraffe.classList.remove('hidden');
