@@ -186,6 +186,7 @@
 		type: 'inline',
 		tLoading: 'loading',
 		mainClass: 'mfp-img',
+		showCloseBtn: true,
 		gallery: {
 			enabled: true,
 			navigateByImgClick: true,
