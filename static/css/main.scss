@@ -150,7 +150,7 @@ div > .inner {
 
 .gallery li img, .gallery li video {
     width: 100%;
-    background-color: #5d7b8f;
+    background-color: #2e2e2e;
 }
 
 .gallery li h5 {
@@ -203,6 +203,7 @@ div > .inner {
     max-height: 100%;
     border-radius: 3px;
     display: block;
+    background: transparent;
 }
 
 .mfp-content .mfp-close {
@@ -784,6 +785,13 @@ i.small {
         margin: 0;
         display: block;
         line-height: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .clip {
+        max-width: 100%;
+        max-height: 100%;
     }
 }
 
