@@ -196,11 +196,6 @@
 			titleSrc: 'title',
 		},
 		callbacks: {
-			open: function() {
-				var parent = this.currItem.inlineElement[0];
-				var video = parent.getElementsByTagName('video');
-				video[0].play();
-			},
 			change: function() {
 				var parent = this.currItem.inlineElement[0];
 				var video = parent.getElementsByTagName('video');
