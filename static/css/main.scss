@@ -622,6 +622,7 @@ i.small {
 }
 
 #fruits img.fruit {
+    position: absolute;
     top: -10%;
     @include transition(transform 0.325s ease-in-out);
 }
@@ -629,7 +630,6 @@ i.small {
 #fruits img.vine {
     top: -10%;
     pointer-events:none;
-    position: absolute;
 
     @include transform( translate(0px, -90%) scale(0.12, 10) );
     @include transform-origin( 50% 100% );
