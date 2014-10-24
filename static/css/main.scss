@@ -621,7 +621,7 @@ i.small {
     @include transform(scale(0, 0));
 }
 
-#fruits img[class*="fruit-"] {
+#fruits img.fruit, #fruits img.vine {
     position: absolute;
 }
 
