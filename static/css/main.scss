@@ -788,6 +788,10 @@ i.small {
         display: block;
         line-height: 0;
     }
+
+    #hero h3 {
+        font-size: $h4-size;
+    }
 }
 
 @media (max-width: 480px) {
