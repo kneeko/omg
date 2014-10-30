@@ -451,7 +451,6 @@ div.quote span {
     border-left: none;
     border-right: none;
     border-bottom: 1px dotted #2f3a45;
-    padding-top: 10px;
     opacity: 0.6;
 }
 
@@ -829,7 +828,14 @@ i.small {
 
 @font-face {
     font-family: 'BPReplay';
-    src: url('bpreplay.otf');
+    src: url('fonts/bpreplay/bpreplay-webfont.eot');
+    src: url('fonts/bpreplay/bpreplay-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/bpreplay/bpreplay-webfont.woff2') format('woff2'),
+         url('fonts/bpreplay/bpreplay-webfont.woff') format('woff'),
+         url('fonts/bpreplay/bpreplay-webfont.ttf') format('truetype'),
+         url('fonts/bpreplay/bpreplay-webfont.svg#bpreplaybold') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @media (max-width: 840px) {
@@ -841,16 +847,26 @@ i.small {
     .split > div.small {
         //width: 40%;
     }
+
     #downloads li {
-        //margin-bottom: 10px;
-        //display: block;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .split .badges li {
+        display: block;
+    }
+
+    .split .badges li a {
+        width: 200px;
+        height: 70px;
     }
 
     .split > div,
     .split > div.small,
     .split > div.big  {
-        width: 100%;
-        display: block;
+        //width: 100%;
+        //display: block;
     }
 }
 
@@ -872,14 +888,6 @@ i.small {
 
 @media (max-width: 700px) {
 
-    .split li {
-        //width: 100%;
-        //display: block;
-    }
-}
-
-@media (max-width: 600px) {
-
     .split > div,
     .split > div.small,
     .split > div.big  {
@@ -887,6 +895,10 @@ i.small {
         display: block;
     }
 
+    .split .badges li,
+    .split #downloads li {
+        display: inline-block;
+    }
 
 }
 
@@ -946,6 +958,11 @@ i.small {
     .clip {
         max-width: 100%;
         max-height: 100%;
+    }
+
+    .split .badges li,
+    .split #downloads li {
+        display: block;
     }
 
     #downloads li {
