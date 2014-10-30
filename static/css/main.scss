@@ -515,6 +515,7 @@ span.icon img {
     color: #5d7b8f;
     font: $copy-font;
     margin-right: 10px;
+    -webkit-appearance: none;
     @include placeholder {
         color: #5d7b8f;
     }
