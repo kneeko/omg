@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /presskit.html
-Disallow: /presskit
-Disallow: /support.html
-Disallow: /support
