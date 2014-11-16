@@ -158,6 +158,10 @@ div > .inner {
     width: 33.33333333333%;
 }
 
+.gallery.half li {
+    width: 50%;
+}
+
 .gallery li img, .gallery li video {
     width: 100%;
     background-color: #2e2e2e;
@@ -295,7 +299,23 @@ div > .inner {
     padding: $layout-gutter $layout-gutter * 2;
 }
 
+.content .emphasis > img {
+    margin-bottom: $layout-gutter;
+    display: inline-block;
+    width: 50%;
+}
 
+.content .emphasis p {
+    font: $copy-font;
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: $layout-gutter;
+}
+
+.content .emphasis hr {
+    margin-bottom: $layout-gutter;
+    color: #5d7b8f;
+}
 
 .content .emphasis {
     background-color: #212b32;
@@ -308,6 +328,10 @@ div > .inner {
     position: relative;
     line-height: 0;
     font-size: 0;
+}
+
+.content .emphasis.left {
+    text-align: left;
 }
 
 .content .emphasis.invert {
@@ -351,7 +375,7 @@ div.quote span.quote-mark {
     display: block;
 }
 
-.quote a {
+.quote a, .content a {
     color: inherit;
     text-decoration: none;
 }
@@ -803,21 +827,21 @@ i.small {
     text-shadow: #528e97 0 2px;
 }
 
-.pink {
+.pink, a.pink {
     color: #AA4D8D;
 }
 
-.yellow {
+.yellow, a.yellow {
     color: #FFFF8C;
     opacity: 0.8;
 }
 
-.orange {
+.orange, a.orange {
     color: #E0A553;
     opacity: 0.9;
 }
 
-.green {
+.green, a.green {
     color: #73BA92;
     opacity: 0.8;
 }
@@ -838,6 +862,10 @@ i.small {
     opacity: 0.7;
 }
 
+.left {
+    text-align: left;
+}
+
 .blue {
     color: #71B6C1;
 }
@@ -852,6 +880,23 @@ i.small {
 
 .preserve {
     white-space: pre;
+}
+
+.embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+}
+
+.embed > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 @font-face {
