@@ -338,6 +338,10 @@ div > .inner {
     font-size: 0;
 }
 
+.content .emphasis.links {
+    margin: $layout-gutter*0.5 0;
+}
+
 .content .emphasis.left {
     text-align: left;
 }
@@ -861,6 +865,11 @@ i.small {
     padding: $layout-gutter;
 }
 
+.toc a:hover {
+    color: #fff;
+    opacity: 0.75;
+}
+
 .content img.transparent {
     background: transparent;
 }
@@ -1102,6 +1111,11 @@ i.small {
 
     .content .emphasis {
         margin: $layout-gutter 0;
+    }
+
+    .content .emphasis.links {
+        margin: $layout-gutter*0.5 0;
+        padding: 0 $layout-gutter;
     }
 }
 
