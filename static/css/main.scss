@@ -340,6 +340,7 @@ div > .inner {
 
 .content .emphasis.links {
     margin: $layout-gutter*0.5 0;
+    padding: 0 $layout-gutter;
 }
 
 .content .emphasis.left {
@@ -1085,6 +1086,16 @@ i.small {
 
     .split > div {
         padding: $layout-gutter 0;
+    }
+
+    .content p {
+        font-size: 18px;
+        line-height: 24px;
+        margin: $layout-gutter*0.5 0;
+    }
+
+    .content .emphasis.links div.quote {
+        padding: 0;
     }
 }
 
