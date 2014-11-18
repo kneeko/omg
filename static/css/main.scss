@@ -1094,6 +1094,11 @@ i.small {
         margin: $layout-gutter*0.5 0;
     }
 
+    .content h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
     .content .emphasis.links div.quote {
         padding: 0;
     }
