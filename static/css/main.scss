@@ -82,12 +82,12 @@ img {
     height: 200px;
 }
 
-.header a {
+#hero.slim .header a {
     text-decoration: none;
     color: inherit;
 }
 
-.header a:hover {
+#hero.slim .header a:hover {
     opacity: 0.8;
 }
 
