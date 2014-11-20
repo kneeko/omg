@@ -78,6 +78,19 @@ img {
     border-bottom: 1px solid rgba(207, 223, 233, 0.2);
 }
 
+#hero.slim {
+    height: 200px;
+}
+
+.header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header a:hover {
+    opacity: 0.8;
+}
+
 // hero element background
 // using a pseudo-element so that the height and width can be scaled proportionally
 
@@ -121,12 +134,20 @@ div > .inner {
     text-align: center;
 }
 
+.header i {
+    text-shadow: none;
+}
+
 #hero h1, #hero h3 {
     color: #fff;
     text-align: center;
     pointer-events:none;
     position: relative;
     z-index: 15;
+}
+
+#hero.slim h1 {
+    pointer-events: auto;
 }
 
 #hero h1 {
