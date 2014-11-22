@@ -449,6 +449,7 @@ div.quote span.quote-mark {
 
 .badges li {
     display: inline-block;
+    position: relative;
 }
 
 .badges li a {
@@ -472,8 +473,32 @@ div.quote span.quote-mark {
 }
 
 .badges li a {
+    position: relative;
     display: block;
     line-height: 0;
+}
+
+.badges li.soon:after {
+    content: '';
+    font-size: 20px;
+    color: #fff;
+    top: 10px;
+    left: 10px;
+    position: absolute;
+
+    background: url('soon.png') no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.split .badges li.soon:after {
+    left: 0;
+    top: 10px;
+}
+
+.badges li.soon a img {
+    opacity: 0.8;
 }
 
 #preload {
@@ -1018,6 +1043,11 @@ i.small {
         height: 70px;
     }
 
+    .split .badges li.soon:after {
+        left: 0;
+        top: 0;
+    }
+
     .split > div,
     .split > div.small,
     .split > div.big  {
@@ -1054,6 +1084,10 @@ i.small {
     .split .badges li,
     .split #downloads li {
         display: inline-block;
+    }
+
+    .split .badges li.soon:after {
+        top: 10px;
     }
 
 }
@@ -1136,6 +1170,10 @@ i.small {
         display: block;
     }
 
+    .split .badges li.soon:after {
+        top: 0;
+    }
+
     #downloads li {
         margin-bottom: 10px;
         display: block;
@@ -1178,6 +1216,10 @@ i.small {
 
     .split .badges li a {
         margin: 10px 5px;
+    }
+
+    #hero .badges li.soon:after {
+        left: 5px;
     }
 
     .content .slogan {
@@ -1244,5 +1286,9 @@ i.small {
         height: 60px;
         margin: 10px 10px -10px 10px;
         line-height: 0;
+    }
+
+    #hero .badges li.soon:after {
+        left: 10px;
     }
 }
