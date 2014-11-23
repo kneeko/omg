@@ -492,6 +492,19 @@ div.quote span.quote-mark {
     z-index: 10;
 }
 
+.downloads li.soon:after {
+    content: '';
+    font-size: 20px;
+    color: #fff;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: url('soon.png') no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
 .split .badges li.soon:after {
     left: 0;
     top: 10px;
