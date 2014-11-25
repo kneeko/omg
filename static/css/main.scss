@@ -894,23 +894,52 @@ i.small {
     position: relative;
 }
 
-#soon {
-    padding: 20px 30px 20px 20px;
+#linux {
+    padding: 30px 30px 30px 20px;
     text-align: left;
-    max-width: 300px;
+    max-width: 400px;
     margin: 40px auto;
     position: relative;
     border-radius: 4px;
-    background: #71B6C1;
+
+    text-align: center;
+
+
+    background-color: #212b32;
+    border-radius: 3px;
+    border: solid 1px rgba(207,223,233,0.05);
+
     border: solid 1px;
+    color: #5d7b8f;
+
+    vertical-align: middle;
+    border: none;
+
+    line-height: 28px;
+
+}
+
+#linux a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#linux a:hover {
+    color: #fff;
+}
+
+#linux h2 {
+
     line-height: 28px;
     font-family: "BPReplay",serif;
     font-size: 28px;
-    vertical-align: middle;
-    border: none;
-    text-align: center;
-    color: #fff;
-    text-shadow: #528e97 0 2px;
+}
+
+#linux h3 {
+
+    line-height: 28px;
+    font-family: "BPReplay",serif;
+    font-size: 24px;
 }
 
 .toc {

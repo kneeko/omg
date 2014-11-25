@@ -205,7 +205,7 @@
 		}
 	});
 
-	$('a[href="#soon"]').magnificPopup({
+	$('a[href="#linux"]').magnificPopup({
 		type: 'inline',
 		preloader: false,
 		closeBtnInside: false,
